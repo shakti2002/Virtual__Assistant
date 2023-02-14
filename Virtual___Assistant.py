@@ -94,13 +94,13 @@ def respond(voice_data):
     #4) time
     if there_exists(["whats the time tell me the time"]):
         time=ctime().split(" ")[3].split(":")[0:2]
-    if time[0]=="00":
-        hours='12'
-    else:
-        hours= time[0]
-        minutes=time[1]
-        time=hours+"hours and "+ minutes +"minutes"
-        engine_speak(time)
+        if time[0]=="00":
+            hours='12'
+        else:
+            hours= time[0]
+            minutes=time[1]
+            time=hours+"hours and "+ minutes +"minutes"
+            engine_speak(time)
 
     #5) search goggle
     if there_exists(["search for"]) and "youtube" not in voice_data:
